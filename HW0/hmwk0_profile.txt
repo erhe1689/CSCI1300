@@ -1,0 +1,12 @@
+——Student Profile——
+
+Name: Eric Heising
+
+Major/minor: Electrical Engineering 
+
+Programming experience: None
+
+What do you expect to learn in this course? 
+Obtain a base understanding of how to make programs in c++
+
+
