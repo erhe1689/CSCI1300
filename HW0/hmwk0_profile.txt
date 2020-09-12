@@ -2,7 +2,7 @@
 
 Name: Eric Heising
 
-Major/minor: Electrical Engineering 
+Major/minor: Electrical Engineering
 
 Programming experience: None
 
