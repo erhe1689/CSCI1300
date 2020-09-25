@@ -19,7 +19,7 @@ int main(){
                 cout << "Meat's the need of dogs like yours!" << endl;
             }
             else{
-                cout << "Dirty mouth? Clean it up with new Orbit Rasberry Mint."<< endl;
+                cout << "Dirty mouth? Clean it up with new Orbit Raspberry Mint."<< endl;
             }
             break;
         }
@@ -28,7 +28,7 @@ int main(){
             int facebookFriends;
             cin >> facebookFriends;
             if(facebookFriends >= 500){
-                cout << "Don’t like cleaning up after your dog? Call Doody Free to signup for backyard cleanup or dog walking service." << endl;
+                cout << "Don’t like cleaning up after your dog? Call Doody Free to sign up for backyard cleanup or dog walking service." << endl;
             }
             else{
                 cout << "Who doesn’t need another cat? Adopt a shelter pet right meow."<< endl;     
