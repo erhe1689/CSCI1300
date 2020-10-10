@@ -1,0 +1,35 @@
+//CSCI1300 Fall 2020
+//Author: Eric Heising
+//Recitation: 507-Chakraborty
+//Homework 5 - Problem 2
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <limits>
+using namespace std;
+
+void stats(double data[],int arrayLength){
+    double count = 0.0;
+    double maximum = numeric_limits<double>::lowest();
+    double minimum =numeric_limits<double>::max();
+    for(int i = 0; i < arrayLength; i++){
+        if(data[i] > maximum){
+            maximum = data[i];
+        }
+        if(data[i] < minimum){
+            minimum = data[i];
+        }
+        count += data[i];
+    }
+    cout << "Min: " << setprecision(2) << fixed << minimum << endl;
+    cout << "Max: " << setprecision(2) << fixed << maximum << endl;
+    cout << "Avg: " << setprecision(2) << fixed << (count/arrayLength) << endl;
+}
+
+
+int main(){
+    double data[] = {1,2,3,7,6,43,1,4,6,73,32,3,56,12};
+    int arrayLength = 14;
+    stats(data,arrayLength);
+    return 0;
+}

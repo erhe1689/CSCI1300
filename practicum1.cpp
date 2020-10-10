@@ -7,21 +7,28 @@ using namespace std;
 //Please add the main() function only
 
 int main(){
-    double dealerScore, playerScore, bet, payout;
-    cout << "Enter the dealer score: " << endl;
-    cin >> dealerScore;
-    cout << "Enter the player score: " << endl;
-    cin >> playerScore;
-    cout << "Enter the value of the bet: " << endl;
-    cin << bet;
-
-    if (playerScore <= dealerScore){
-        payout = 0;
+    double num1, num2, num3;
+    cout << "Enter first number: " << endl;
+    cin >> num1;
+    cout << "Enter second number: " << endl;
+    cin >> num2;
+    cout << "Enter third number: " << endl;
+    cin >> num3;
+    if (num1 < num2 && num1 < num3 && num1 != num2 && num1 != num3){
+        cout << "The smallest number is " << num1 << endl;
     }
-    else {
-        payout = ((playerScore - dealerScore) * bet) / 2;
-
+    else if(num2 < num3 && num2 < num1 && num2 != num3){
+        cout << "The smallest number is " << num2 << endl;
     }
-    cout << "The amount paid out is: " << payout << endl;
+    else if(num1 == num2 && num1 < num3){
+        cout << "The smallest number is " << num1 << endl;
+    }
+    else if(num2 == num3 && num2 < num1){
+        cout << "The smallest number is " << num2 << endl;
+    }
+    else if(num1 == num3 && num1 < num2){
+        cout << "The smallest number is " << num3 << endl;
+    }
+    else cout << "The smallest number is " << num3 << endl;
     return 0;
 }
