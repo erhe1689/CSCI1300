@@ -71,6 +71,7 @@ void findMatchedGenome(string genome1, string genome2, string genome3, string su
 int main(){
     int menuChoice;
     do{
+        //menu that will be displayed to user. In do while loop so it iterates the first time no matter what
         cout << "Select a numerical option: " << endl;
         cout << "=== menu ===" << endl;
         cout << "1. Find similarity score" << endl;
@@ -79,8 +80,8 @@ int main(){
         cout << "4. Quit"<< endl;
         cin >> menuChoice;
 
-        switch(menuChoice){
-            case 1:{
+        switch(menuChoice){//switch statement accepting user mode chouice
+            case 1:{// Find similarity score
                 string sequence1;
                 string sequence2;
                 cout << "Enter sequence 1: " << endl;
@@ -90,7 +91,7 @@ int main(){
                 cout << "Similarity score: " << calcSimScore(sequence1,sequence2) << endl;
                 break;
             }
-            case 2:{
+            case 2:{// Find the best similarity score
                 string genome;
                 string subSequence;
                 cout << "Enter genome:" << endl;
@@ -100,7 +101,7 @@ int main(){
                 cout << "Best similarity score: " << findBestSimScore(genome, subSequence) << endl;
                 break;
             }
-            case 3:{
+            case 3:{//Analyze the genome sequences
                 string genome1;
                 string genome2;
                 string genome3;
@@ -116,11 +117,11 @@ int main(){
                 findMatchedGenome(genome1,genome2, genome3,subSequence);
                 break;
             }
-            case 4: {
+            case 4: {//Quit
                 cout << "Good bye!"<< endl;
                 break;
             }
-            default: {
+            default: {//default error case
                 cout << "Invalid option." << endl;
                 break;
             }

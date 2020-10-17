@@ -10,16 +10,16 @@ using namespace std;
 string userInput;
 
 void reverse(string userInput){
-    string reverseAns = userInput;
+    string reverseAns = userInput;//set output string initially to input
     for(int i = 0; i < userInput.length(); i++){
-        reverseAns[i]= userInput[userInput.length()-1-i];
+        reverseAns[i]= userInput[userInput.length()-1-i];//loop through the string reversing order of characters. -1 accounting for the 0th index 
     }
-    cout << reverseAns << endl;
+    cout << reverseAns << endl; // print output string
 }
 
 int main(){
     cout << "Enter a string: " << endl;
-    getline(cin, userInput);
+    getline(cin, userInput); //gets user input//test case
     reverse(userInput);
     return 0;
 }

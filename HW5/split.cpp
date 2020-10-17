@@ -10,16 +10,19 @@ using namespace std;
 
 
 int split(string inputString, char splitter, string finalArray[], int arrayLength){
+    //declaring variables
     int arraySpot = 0;
     int chunkLength = 0;
     for(int i = 0; i < inputString.length(); i += (chunkLength + 1)){
+        //looping through string until the end of the string, adding chunksize cuts
         chunkLength = 0;
         while(inputString[i + chunkLength] != splitter && (i + chunkLength) < inputString.length()){
+            //while each char isnt the splitter, make the chunklength longer
             chunkLength++;
         }
-       finalArray[arraySpot] = inputString.substr(i, chunkLength);
+       finalArray[arraySpot] = inputString.substr(i, chunkLength); // find how many chunks/substrings
        arraySpot ++;
-       if(arraySpot >= arrayLength){
+       if(arraySpot >= arrayLength){ // invalidation
            return -1;
        }
     }
@@ -29,6 +32,7 @@ int split(string inputString, char splitter, string finalArray[], int arrayLengt
 
 
 int main(){
+    //test case
     string inputString = "Albanians/Seized/My/Children";
     char splitter = '/';
     string data[4];

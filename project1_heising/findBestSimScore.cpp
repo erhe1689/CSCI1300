@@ -30,15 +30,17 @@ double calcSimScore(string sequence1, string sequence2){
 double findBestSimScore(string genome, string subSequence){
     double highestSimScore = 0.0;
     double storedCalcSimScore = 0.0;
+    //error invalidation, checks that sub length is less than full length, and that both are not empty
     if(genome.length() < subSequence.length() || genome ==  "" || subSequence == ""){
         return 0;
     }
     else {
+        // shuffles through the genome, comparing the subsequence with different starting points
         for(int i = 0; i <= (genome.length() - subSequence.length()); i++){
             storedCalcSimScore = calcSimScore(genome.substr(i,subSequence.length()), subSequence);
-            highestSimScore = fmax(highestSimScore,storedCalcSimScore);
+            highestSimScore = fmax(highestSimScore,storedCalcSimScore);//finds which genome has the max score
         }
-        return highestSimScore;
+        return highestSimScore;//returns the best sim score
     }
 }
 

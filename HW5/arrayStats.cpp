@@ -9,9 +9,11 @@
 using namespace std;
 
 void stats(double data[],int arrayLength){
+    //declaring variables
     double count = 0.0;
     double maximum = numeric_limits<double>::lowest();
     double minimum =numeric_limits<double>::max();
+    //looping and compating each to maximum/minium and setting appropriately
     for(int i = 0; i < arrayLength; i++){
         if(data[i] > maximum){
             maximum = data[i];
@@ -19,8 +21,10 @@ void stats(double data[],int arrayLength){
         if(data[i] < minimum){
             minimum = data[i];
         }
+        //sum variable
         count += data[i];
     }
+    //printing to terminal
     cout << "Min: " << setprecision(2) << fixed << minimum << endl;
     cout << "Max: " << setprecision(2) << fixed << maximum << endl;
     cout << "Avg: " << setprecision(2) << fixed << (count/arrayLength) << endl;
@@ -28,6 +32,7 @@ void stats(double data[],int arrayLength){
 
 
 int main(){
+    //test case
     double data[] = {1,2,3,7,6,43,1,4,6,73,32,3,56,12};
     int arrayLength = 14;
     stats(data,arrayLength);

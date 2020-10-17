@@ -43,16 +43,20 @@ double findBestSimScore(string genome, string subSequence){
 }
 
 void findMatchedGenome(string genome1, string genome2, string genome3, string subSequence){
+    // input validation checks if any genomes or subseq is empty
     if(genome1 == ""|| genome2 == ""||genome3 == ""|| subSequence ==""){
         cout << "Genomes or sequence is empty." << endl;
     }
+    //validates again to see if lengths are the same
     else if(genome1.length() != genome2.length() || genome1.length() != genome3.length()){
         cout << "Lengths of genomes are different." << endl;
     }
     else{
+        // runs the findBestSimScore function on each genome with the subsequence
         double score1 = findBestSimScore(genome1,subSequence);
         double score2 = findBestSimScore(genome2,subSequence);
         double score3 = findBestSimScore(genome3,subSequence);
+        // Logic to print out the highest score. 
         if(score1 >= score2 && score1 >= score3){
             cout <<"Genome 1 is the best match."<< endl;
         }
@@ -67,6 +71,7 @@ void findMatchedGenome(string genome1, string genome2, string genome3, string su
 }
 
 int main(){
+    //user test case, running function
     string genome1;
     string genome2;
     string genome3;

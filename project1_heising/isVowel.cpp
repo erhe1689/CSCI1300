@@ -7,15 +7,17 @@
 using namespace std;
 
 bool isVowel(char userValue){
-    bool ifVowel;
+    bool ifVowel; //declares new 'switching variable' 
+    // checks user input char with vowel chars and returns either T or F
     if(userValue == 'a' || userValue == 'e' || userValue == 'i' || userValue =='o' || userValue == 'u' || userValue == 'A' || userValue == 'E' || userValue == 'I' || userValue == 'O' ||userValue == 'U'){
         ifVowel = true;
     }
     else ifVowel = false;
-    return ifVowel;
+    return ifVowel; //returns answer from function
 }
 
 int main(){
+    //test case that gets user input, then returns a 1 if vowel and a 0 if not. 
     char userValue;
     cout << "Enter a character: "<< endl;
     cin >> userValue;
