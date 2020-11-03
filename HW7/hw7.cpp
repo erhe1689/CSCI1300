@@ -9,17 +9,18 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
+//printAllBooks function
 void printAllBooks(Book books[],int numBooks){
-    if(numBooks <= 0) cout << "No books are stored" << endl;
+    if(numBooks <= 0) cout << "No books are stored" << endl;//checks for empty array
     else{
         cout << "Here is a list of books" << endl;
-        for(int i = 0; i < numBooks; i++){
+        for(int i = 0; i < numBooks; i++){//prints out all books with title and author
             cout << books[i].getTitle() << " by ";
             cout << books[i].getAuthor() << endl;
         }
     }
 }
-
+//previously made split function
 int split(string inputString, char splitter, string finalArray[], int arrayLength){
     //declaring variables
     int arraySpot = 0;
@@ -39,7 +40,7 @@ int split(string inputString, char splitter, string finalArray[], int arrayLengt
     }
     return arraySpot;
 }
-
+//readBooks functiom, comments found on other iteration of function
 int readBooks(string fileName, Book books[], int numBooksStored, int booksArrSize){
     ifstream file;
     string line;
@@ -66,42 +67,42 @@ int main(){
     int numBooksStored = 0;
     Book books[50];
     do{
-        cout << "======Main Menu=====" << endl;
+        cout << "======Main Menu=====" << endl;//initial setup of menu
         cout << "1. Read books" << endl;
         cout << "2. Print all books" << endl;
         cout << "3. Quit" << endl;
         cin >> userInput;
         
-        switch(userInput){
+        switch(userInput){//switching between user selected modes
             case 1:{
                 cout << "Enter a book file name:" << endl;
                 cin >> userFile;
                 int returnCase = readBooks(userFile, books, numBooksStored, 50);
                 switch(returnCase){
                     case -1: {
-                        cout << "No books saved to the database." << endl;
+                        cout << "No books saved to the database." << endl; // empty database
                         break;
                     }
                     case -2: {
-                        cout << "Database is already full. No books were added." << endl;
+                        cout << "Database is already full. No books were added." << endl; // full database
                         break;
                     }
                     default: {
                         numBooksStored = returnCase;
-                        cout << "Total books in the database: " << numBooksStored << endl; 
+                        cout << "Total books in the database: " << numBooksStored << endl;  // returns num of books in database
                     }
                 }
                 break;
             }
-            case 2:{
+            case 2:{//calls printAllBooks function if user selects mode 2
                 printAllBooks(books, numBooksStored);
                 break;
             }
-            case 3:{
+            case 3:{//prints good bye and quits the menu
                 cout << "Good bye!" << endl;
                 return 0;
             }
-            default:{
+            default:{//covers invalid inputs out of menu range
                 cout << "Invalid input." << endl;
             }
         }

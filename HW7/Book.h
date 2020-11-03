@@ -9,20 +9,22 @@
 #include <string>
 
 using namespace std;
-
+//book class
 class Book
 {
 public:
-    Book();
-    Book(string title, string author, string genre);
-    string getTitle() const;
-    void setTitle(string title_1);
-    string getAuthor() const;
-    void setAuthor(string author_1);
-    string getGenre() const;
-    void setGenre(string genre_1);
+
+    Book();//default constructor
+    Book(string title, string author, string genre);//parametrized constructor
+    string getTitle() const; //title getter
+    void setTitle(string title_1);//title setter
+    string getAuthor() const;//author getter
+    void setAuthor(string author_1);//author setter
+    string getGenre() const;//genre getter
+    void setGenre(string genre_1);//genre setter
 
 private:
+//private variables
     string title;
     string author;
     string genre;

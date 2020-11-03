@@ -9,8 +9,9 @@
 #include <cmath>
 #include <iostream>
 using namespace std;
-
+//maxRadius function
 int maxRadius(Planet planets[], int numPlanets){
+//starts with maxRadius -1, overwriting when there is a larger radius
     double maxRadius = -1.0;
     int maxIndex = -1; // returns -1 if there is an empty array
     for(int i = 0; i < numPlanets; i++){
@@ -25,6 +26,7 @@ int maxRadius(Planet planets[], int numPlanets){
 
 
 int main(){
+    //test cases for planet
     Planet planets[5];
     planets[0] = Planet("On A Cob Planet",1234);
     planets[1] = Planet("Bird World",4321);

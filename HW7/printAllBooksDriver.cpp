@@ -5,24 +5,27 @@
 
 //implementing the book class
 #include "Book.h"
-
 #include <string>
 #include <cmath>
 #include <iostream>
 #include <fstream>
 using namespace std;
 
+//print all books function
+
 void printAllBooks(Book books[],int numBooks){
+    //tests to make sure there are books stored in the array
     if(numBooks <= 0) cout << "No books are stored" << endl;
     else{
         cout << "Here is a list of books" << endl;
+        //print ith book as long as there are still books in the array
         for(int i = 0; i < numBooks; i++){
             cout << books[i].getTitle() << " by ";
             cout << books[i].getAuthor() << endl;
         }
     }
 }
-
+//split function made previously
 int split(string inputString, char splitter, string finalArray[], int arrayLength){
     //declaring variables
     int arraySpot = 0;
@@ -42,7 +45,7 @@ int split(string inputString, char splitter, string finalArray[], int arrayLengt
     }
     return arraySpot;
 }
-
+//read books function, comments found on other instance of function
 int readBooks(string fileName, Book books[], int numBooksStored, int booksArrSize){
     ifstream file;
     string line;
@@ -67,6 +70,7 @@ int readBooks(string fileName, Book books[], int numBooksStored, int booksArrSiz
 
 
 int main(){
+    //test case for printAllBooks function
     Book books[20];
     readBooks("books.txt", books,0,20);
     printAllBooks(books,20);
